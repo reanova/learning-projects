@@ -1,0 +1,15 @@
+{{>nav}}
+<h1>Make intentionally revealing movie and TV series spoilers a criminal offence.</h1>
+    <img class= "association" src="/approved.png" alt="">
+<div id="petitionPart">
+    {{#if error}}
+        <span class="errorText">Dear comrade, there is no point if you do not sign</span>
+    {{/if}}
+    <form method="POST">
+        <label for="signature">Please sign below:</label>
+        <input id ="hiddeninput" type="hidden" name="signature">
+        <canvas id="canvas" width="400px" height="300px"></canvas>
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <button id="submit">SUBMIT</button>
+    </form>
+</div>

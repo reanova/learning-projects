@@ -1,0 +1,17 @@
+{{>nav}}
+<div id="thanksalotcontainer">
+    <p class="thankstext">Many thanks for contributing to the cause!</p>
+    <h2 class= "moretext">With your help we will demolish the spoiler-dom forever and will be finally able to enjoy movies and series with the element of suspence not being taken away from us</h2>
+    <br>
+    {{#signRows}}
+    <img class="signatureAdded" src="{{signature}}" alt="">
+    <form method="POST"class="formdelsignature"> 
+        <input type="submit" value="Redo Signature" id="submitbutton">
+    {{/signRows}}
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">   
+    </form>
+    <br>
+    {{#totalRows}}
+    <a href="/signers">Click here to see the brave {{count}} comrades joining forces</a>
+    {{/totalRows}}
+</div>

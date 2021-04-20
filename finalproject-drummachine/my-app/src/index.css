@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    height: 100vw;
+    overflow: hidden;
+    font-family: "Noto Sans JP", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #efc23b;
+    background: -moz-linear-gradient(
+        top,
+        #efc23b 0%,
+        #efc23b 43%,
+        #7a5b22 100%
+    );
+    background: -webkit-linear-gradient(
+        top,
+        #efc23b 0%,
+        #efc23b 43%,
+        #7a5b22 100%
+    );
+    background: linear-gradient(
+        to bottom,
+        #efc23b 0%,
+        #efc23b 43%,
+        #7a5b22 100%
+    );
+}
+
+code {
+    font-family: "Noto Sans JP", sans-serif;
+}

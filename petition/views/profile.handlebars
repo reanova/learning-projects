@@ -1,0 +1,17 @@
+{{>nav}}
+<h1>Make intentionally revealing movie and TV series spoilers a criminal offence.</h1>
+    <img class= "association" src="/approved.png" alt="">
+<div id="profileBody">
+    <form method="POST">
+        <p id="profiletext">Please give us some more information about yourself <br> (optional)</p>
+        <input type="number" name="age" placeholder="age between 18 and 120" min="18" max= "120">
+        <br>
+        <input type="text" name="city" placeholder="city" id="city" maxlength="86">
+        <br>
+        <input type="text" name="url" placeholder="homepage">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <br>
+        <br>
+        <button id="addProfile">CONTINUE</button>
+    </form>
+</div>

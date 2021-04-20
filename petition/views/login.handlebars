@@ -1,0 +1,14 @@
+    <h1>Make intentionally revealing movie and TV series spoilers a criminal offence.</h1>
+    <img class= "association" src="/approved.png" alt="">
+    {{#if error}}
+        <span class="errorText">Wrong email or password!</span>
+    {{/if}}
+    <form method="POST">
+        <input type="text" name="email" placeholder="email">
+        <br>
+        <input type="password" name="password" placeholder="password">
+        <br>
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <button id="buttonlogin">LOGIN</button>
+        <p id="incaseof">New member? Please <a href="/register" id="register">REGISTER</a> first</p>
+    </form>

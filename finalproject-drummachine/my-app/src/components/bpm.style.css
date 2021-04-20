@@ -1,0 +1,25 @@
+.bpm {
+    position: relative;
+    background-color: #181818;
+    border: 5px ridge #d7dce3;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 10px;
+    width: 3em;
+    display: inline-block;
+    top: 0px;
+    margin-right: 10em;
+    margin-left: 5px;
+    font-family: "OCR A Std", monospace;
+}
+label {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #44443d;
+}
+
+.bpm-container {
+    display: inline;
+}

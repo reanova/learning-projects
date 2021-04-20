@@ -1,0 +1,338 @@
+* {
+    font-family: "Allerta", sans-serif;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+body {
+    background-color: #f7cb15;
+}
+
+header {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    height: 200px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#synthlogo {
+    height: 100px;
+    width: 260px;
+    object-fit: contain;
+}
+
+h1 {
+    font-family: "Unica One", cursive;
+    font-size: 6.5em;
+    text-align: right;
+    padding: 0;
+    display: inline-flex;
+    color: black;
+}
+
+#formcontainer {
+    position: relative;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    height: 60px;
+    transition: 0.5s cubic-bezier(0.235, 0.035, 0, 1.53);
+}
+
+#formcontainer:hover {
+    box-shadow: inset 0 10px 20px rgba(185, 149, 49, 0.493);
+}
+
+form {
+    position: absolute;
+    margin-left: 30px;
+    width: 1200px;
+    margin-top: 10px;
+}
+
+.inputtext {
+    background-color: white;
+    color: black;
+    height: 20px;
+    transition: 0.5s cubic-bezier(0.235, 0.035, 0, 1.53);
+}
+
+.inputtext:focus {
+    box-shadow: inset 0 0px 8px 0px rgba(14, 14, 13, 0.596);
+}
+
+.inputtext:hover {
+    box-shadow: inset 0 0px 8px 0px rgba(14, 14, 13, 0.596);
+}
+
+#inputfile {
+    cursor: pointer;
+}
+
+/* #custom-file-upload {
+    font-size: 1em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline;
+    border: white 3px solid;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+} */
+
+.submitbutton {
+    background-color: black;
+    color: white;
+    font-family: "Allerta", sans-serif;
+    font-size: 1em;
+    height: 38px;
+    width: 80px;
+    border: white 3px solid;
+}
+
+.submitbutton:hover {
+    background-color: rgb(27, 134, 138);
+    color: white;
+    border: white 3px solid;
+    cursor: pointer;
+}
+
+/* new */
+
+.overlay {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    height: 75%;
+    width: 55%;
+    padding-top: 20px;
+    background-color: black;
+    justify-content: center;
+    align-content: space-between;
+    box-shadow: 0 0px 30px rgba(158, 154, 154, 0.548);
+    color: white;
+}
+
+.modal:hover {
+    overflow: scroll;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: 0.3s opacity ease-out;
+}
+
+#containermodalin {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+    overflow-y: scroll;
+}
+
+.nav {
+    color: lightgray;
+    font-size: 100px;
+    opacity: 0.6;
+    padding-top: 200px;
+}
+
+.linkmodal {
+    text-decoration: none;
+    color: none;
+}
+
+.modal img {
+    height: 80%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.modal-title {
+    text-align: center;
+    color: white;
+    font-size: 0.9em;
+}
+
+.modal-description {
+    text-align: center;
+    margin-top: 5px;
+    color: white;
+    font-size: 0.8em;
+}
+
+.modal-uploader {
+    margin-top: 5px;
+    padding-bottom: 10px;
+    font-size: 0.7em;
+    padding-top: 5px;
+}
+/* new */
+
+.comment-form {
+    flex-basis: 100%;
+    justify-content: center;
+}
+
+.comment-formone {
+    /* flex-basis: 100%; */
+    width: 98%;
+    margin: 10px;
+    background-color: #f7cb15;
+    color: black;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.comments-container {
+    flex-basis: 100%;
+    height: 150px;
+    overflow-y: scroll;
+    margin-top: 0;
+}
+
+.comment {
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px white dotted;
+    padding: 5px;
+    background-color: rgb(29, 129, 136);
+    transition: 0.5s cubic-bezier(0.235, 0.035, 0, 1.53);
+}
+
+.comment:hover {
+    box-shadow: inset 0 4px 16px 0px rgba(66, 66, 64, 0.596);
+}
+
+.comment-text {
+    word-wrap: break-word;
+}
+
+#imageboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    max-width: 1600px;
+    height: 850px;
+}
+
+#imageboard:hover {
+    overflow: scroll;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.425);
+}
+
+#username,
+#comment {
+    transition: 0.5s cubic-bezier(0.235, 0.035, 0, 1.53);
+}
+
+#username:focus,
+#comment:focus {
+    box-shadow: inset 0 0px 10px 0px rgba(39, 39, 38, 0.596);
+}
+
+#username:hover,
+#comment:hover {
+    box-shadow: inset 0 0px 10px 0px rgba(39, 39, 38, 0.596);
+}
+
+.imagediv {
+    opacity: 0.8;
+    width: 450px;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.5s cubic-bezier(0.235, 0.035, 0, 1.53);
+}
+
+.imagetitle {
+    color: black;
+}
+
+.imagediv:hover {
+    opacity: 1;
+    cursor: pointer;
+    box-shadow: 0 0px 16px 0px rgba(116, 106, 106, 0.637);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.singleimage {
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.more {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.more-button {
+    background-color: black;
+    font-size: 1.2em;
+    border-radius: 10px;
+    box-shadow: inset 0 8px 16px 0px rgba(185, 183, 183, 0.767);
+    height: 50px;
+    color: white;
+    padding: 10px;
+    transition: 0.5s cubic-bezier(0.235, 0.035, 0, 1.53);
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.more-button:hover {
+    box-shadow: inset 0px 0px 10px 0px rgba(185, 183, 183, 0.767);
+}
+
+footer {
+    color: black;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding-top: 30px;
+    padding-bottom: 32px;
+    padding-right: 10px;
+    background-color: rgb(29, 129, 136);
+    width: 100vw;
+    text-align: right;
+    box-shadow: inset 0 0px 25px 0px rgba(39, 39, 38, 0.596);
+}

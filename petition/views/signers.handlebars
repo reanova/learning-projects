@@ -1,0 +1,14 @@
+{{>nav}}
+<div id="signersPart">
+    <p class = "mention">The following {{city}} comrades came bravely to the front so as to demolish together the spoilerdom</p>
+    <br>
+    <div id="allSigners">
+    {{#rows}}
+        {{#if url}}
+        <h2><a href="{{url}}" class="signa">{{first}} {{last}}</a> {{age}} <a href="/signers/{{city}}" class="signa">{{city}}</a></h2>
+        {{else}}
+        <h2>{{first}} {{last}} {{age}} <a href="/signers/{{city}}" class="signa">{{city}}</a></h2>
+        {{/if}}
+    {{/rows}}
+    </div>
+</div>

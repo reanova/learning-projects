@@ -1,0 +1,33 @@
+{{>nav}}
+<h1>Make intentionally revealing movie and TV series spoilers a criminal offence.</h1>
+    <img class= "association" src="/approved.png" alt="">
+{{#if error}}
+    <span class="errorText">Something is wrong with your input</span>
+{{/if}}
+<form method="POST">
+    {{#user}}
+    <p id="profiletext">Update your details here:</p>
+    <span>*<input type="text" name="first" placeholder="first name" value={{first}}></span>
+    <br>
+    <span>*<input type="text" name="last" placeholder="last name" value={{last}}></span>
+    <br>
+    <span>*<input type="email" name="email" placeholder="email" value={{email}}></span>
+    <br>
+    <span>*<input type="password" name="password" placeholder="password"></span>
+    <br>
+    <input type="number" name="age" placeholder="age" value={{#if age}}{{age}}{{/if}} min="18" max= "120">
+    <br>
+    <input type="text" name="city" placeholder="city" id="city" maxlength="86" value={{#if city}}{{city}}{{/if}}>
+    <br>
+    <input type="text" name="url" placeholder="homepage" value={{#if url}}{{url}}{{/if}}>
+    <br>
+    <span>* mandatory fields</span>
+    <br>
+    {{/user}}
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <button id="update">Update</button>
+</form>
+<br>
+<div class="deletebutton">
+    <a href="/deletion">Delete Profile</a>
+</div>

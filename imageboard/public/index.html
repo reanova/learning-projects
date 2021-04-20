@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthboard</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Allerta&family=Unica+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="giphy.gif" id="synthlogo" alt="logo">
+        <h1>Synthboard</h1>
+    </header>
+
+    <div id="main">
+        <div id="formcontainer">
+            <form id="formbar">
+                <input v-model="title" type="text" name="title" placeholder="Title" class="inputtext">
+                <input v-model="description" type="text" name="description" placeholder="Description" class="inputtext">
+                <input v-model="username" type="text" name="username" placeholder="Username" class="inputtext">
+                <input @change="handleChange" type="file" name="file" accept="image/*" id="inputfile">
+                <button class="submitbutton" @click.prevent="handleClick">Submit</button>
+            </form>
+        </div>
+        <my-modal-component v-if="selectedImageId" v-bind:image-id="selectedImageId" @close="closeModal">
+        </my-modal-component>
+
+        <div id="imageboard">
+            <div class="imagediv" v-for="image in images" :key="image.id">
+                 <a :href="'#' + image.id" style="text-decoration: none">
+                    <img class="singleimage" :src="image.url" :alt="image.title"/>
+                    <p class="imagetitle">{{image.title}}</p>
+                </a>
+            </div>
+            <div class="more" v-if="showMoreButton">
+                <button class="more-button" @click="getMoreImages">See More Synths and Knobs</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>© Rea orbing around Spiced Academy, 2021</footer>
+
+    <script id ="modal" type="text/x-template">
+        <transition name="fade">
+        <div class="overlay" @click.self.prevent="requestCloseModal">
+            <div class="modal">
+                <a :href="'#' + image.next_id" class="linkmodal"><p class="nav" id="next" v-if="image.next_id"><</p></a>
+                <div id="containermodalin">
+                    <img :src="image.url" alt="image.description">
+                    <br>
+                    <h2 class="modal-title">{{image.title}}</h2>
+                    <p class="modal-description">{{image.description}}</p>
+                    <p class="modal-uploader">Uploaded by {{image.username}} on {{image.created_at}}</p>
+                </div>
+                <a :href="'#' + image.prev_id" class="linkmodal"><p class="nav" id="prev" v-if="image.prev_id">></p></a>
+                <my-add-comment :image="image" @comment="addComment"></my-add-comment>
+                <my-comments :comments="comments"></my-comments>
+                <br>
+            </div>
+        </div>
+        </transition>
+    </script>
+
+    <script id="add-comment" type="text/x-template">
+        <div class="comment-form">
+            <form class="comment-formone">
+                <h4>Leave your comment here: </h4>
+                <label for="username">Username: </label>
+                <input v-model="username" type="text" name="username" id="username" maxlength="20">
+                <label for="comment">Comment: </label>
+                <input v-model="comment" type="text" name="comment" id="comment" maxlength="140">
+                <button @click.prevent="postComment" class="submitbutton">Submit</button>
+            </form>
+        </div>
+    </script>
+
+    <script id="comments" type="text/x-template">
+        <div class="comments-container">
+            <div class="comment" v-for="comment in comments" :key="comment.id">
+                <p class="comment-text">{{comment.text}}</p>
+                <p class="comment-info">{{comment.username}} on {{comment.created_at}}</p>
+            </div>
+        </div>
+    </script>
+
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
